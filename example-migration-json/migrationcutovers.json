@@ -1,0 +1,32 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "migrations.openshift.io/v1beta1",
+            "kind": "MigrationCutover",
+            "metadata": {
+                "creationTimestamp": "2019-03-13T20:27:51Z",
+                "generation": 1,
+                "labels": {
+                    "controller-tools.k8s.io": "1.0",
+                    "migrations.openshift.io/migration-group": "example"
+                },
+                "name": "my-migrationcutover",
+                "namespace": "mig",
+                "resourceVersion": "30093",
+                "selfLink": "/apis/migrations.openshift.io/v1beta1/namespaces/mig/migrationcutovers/my-migrationcutover",
+                "uid": "796945cd-45ce-11e9-9286-0e070849dc4e"
+            },
+            "spec": {
+                "migrationRef": {
+                    "name": "my-migration"
+                }
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}

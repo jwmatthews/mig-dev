@@ -1,0 +1,41 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "migrations.openshift.io/v1beta1",
+            "kind": "MigrationPlan",
+            "metadata": {
+                "creationTimestamp": "2019-03-13T20:27:51Z",
+                "generation": 1,
+                "labels": {
+                    "controller-tools.k8s.io": "1.0",
+                    "migrations.openshift.io/migration-group": "example"
+                },
+                "name": "my-migrationplan",
+                "namespace": "mig",
+                "resourceVersion": "30094",
+                "selfLink": "/apis/migrations.openshift.io/v1beta1/namespaces/mig/migrationplans/my-migrationplan",
+                "uid": "796d06c8-45ce-11e9-9286-0e070849dc4e"
+            },
+            "spec": {
+                "destClusterRef": {
+                    "name": "my-new-cluster"
+                },
+                "migrationAssetCollectionRef": {
+                    "name": "my-migrationassetcollection"
+                },
+                "migrationStorageRef": {
+                    "name": "my-migrationstorage"
+                },
+                "srcClusterRef": {
+                    "name": "my-old-cluster"
+                }
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}
