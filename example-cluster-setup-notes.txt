@@ -109,3 +109,33 @@ oc get crd migrationplans.migrations.openshift.io -o yaml
             migrationStorageRef:
               type: object
 [...snip...]
+
+-----------------------------------------------------
+Part 4: Creating an example migration
+-----------------------------------------------------
+The first thing we need to do is create a new project (namespace) to contain our objects.
+Run:
+
+oc new-project mig
+
+In the example-migration/ directory of this project, you'll find an example set
+of all migration objects that would be required to start a migration.
+They are set up to be installed to the mig namespace.
+To create these and (in theory) start a migration, run:
+
+oc create -f ./example-migration
+
+This will oc create each object file, creating instances of them in kube. To fetch
+the list of all MigrationClusters now, as an example, we can run:
+
+# oc get migrationclusters
+
+NAME             AGE
+my-new-cluster   6m
+my-old-cluster   6m
+
+This displays the objects. See example-verbose-get.txt for a full json response,
+as well as the API endpoints that oc ran a GET against to retrieve the objects.
+
+This same process is used to Create, Read, Update, and Delete all migration objects
+in a cluster.

@@ -1,0 +1,74 @@
+I0313 15:46:02.192396   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
+I0313 15:46:02.193231   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
+I0313 15:46:02.196632   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
+I0313 15:46:02.200113   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
+I0313 15:46:02.200371   10546 round_trippers.go:383] GET https://34.226.200.122.nip.io:8443/apis/migrations.openshift.io/v1beta1/namespaces/mig/migrationclusters?limit=500
+I0313 15:46:02.200380   10546 round_trippers.go:390] Request Headers:
+I0313 15:46:02.200385   10546 round_trippers.go:393]     User-Agent: oc/v1.11.0+d4cacc0 (linux/amd64) kubernetes/d4cacc0
+I0313 15:46:02.200390   10546 round_trippers.go:393]     Accept: application/json
+I0313 15:46:02.200395   10546 round_trippers.go:393]     Authorization: Bearer _rfTmdZy-UPoxaI1JfwJDRQwLY6gXgsAX43NPUAymLE
+I0313 15:46:02.308946   10546 round_trippers.go:408] Response Status: 200 OK in 108 milliseconds
+I0313 15:46:02.309023   10546 round_trippers.go:411] Response Headers:
+I0313 15:46:02.309051   10546 round_trippers.go:414]     Cache-Control: no-store
+I0313 15:46:02.309076   10546 round_trippers.go:414]     Content-Type: application/json
+I0313 15:46:02.309098   10546 round_trippers.go:414]     Content-Length: 1340
+I0313 15:46:02.309121   10546 round_trippers.go:414]     Date: Wed, 13 Mar 2019 19:46:02 GMT
+I0313 15:46:02.309260   10546 request.go:897] Response Body: {"apiVersion":"migrations.openshift.io/v1beta1","items":[{"apiVersion":"migrations.openshift.io/v1beta1","kind":"MigrationCluster","metadata":{"creationTimestamp":"2019-03-13T19:35:27Z","generation":1,"labels":{"controller-tools.k8s.io":"1.0"},"name":"my-new-cluster","namespace":"mig","resourceVersion":"15540","selfLink":"/apis/migrations.openshift.io/v1beta1/namespaces/mig/migrationclusters/my-new-cluster","uid":"27ab23f5-45c7-11e9-9286-0e070849dc4e"},"spec":{"clusterAuthSecretRef":{"name":"my-new-cluster-migrationcluster-auth","namespace":"openshift-config"},"clusterUrl":"https://ocp4.example.com:8443"}},{"apiVersion":"migrations.openshift.io/v1beta1","kind":"MigrationCluster","metadata":{"creationTimestamp":"2019-03-13T19:35:27Z","generation":1,"labels":{"controller-tools.k8s.io":"1.0"},"name":"my-old-cluster","namespace":"mig","resourceVersion":"15539","selfLink":"/apis/migrations.openshift.io/v1beta1/namespaces/mig/migrationclusters/my-old-cluster","uid":"27a6cace-45c7-11e9-9286-0e070849dc4e"},"spec":{"c [truncated 316 chars]
+I0313 15:46:02.311291   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
+I0313 15:46:02.313477   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "migrations.openshift.io/v1beta1",
+            "kind": "MigrationCluster",
+            "metadata": {
+                "creationTimestamp": "2019-03-13T19:35:27Z",
+                "generation": 1,
+                "labels": {
+                    "controller-tools.k8s.io": "1.0"
+                },
+                "name": "my-new-cluster",
+                "namespace": "mig",
+                "resourceVersion": "15540",
+                "selfLink": "/apis/migrations.openshift.io/v1beta1/namespaces/mig/migrationclusters/my-new-cluster",
+                "uid": "27ab23f5-45c7-11e9-9286-0e070849dc4e"
+            },
+            "spec": {
+                "clusterAuthSecretRef": {
+                    "name": "my-new-cluster-migrationcluster-auth",
+                    "namespace": "openshift-config"
+                },
+                "clusterUrl": "https://ocp4.example.com:8443"
+            }
+        },
+        {
+            "apiVersion": "migrations.openshift.io/v1beta1",
+            "kind": "MigrationCluster",
+            "metadata": {
+                "creationTimestamp": "2019-03-13T19:35:27Z",
+                "generation": 1,
+                "labels": {
+                    "controller-tools.k8s.io": "1.0"
+                },
+                "name": "my-old-cluster",
+                "namespace": "mig",
+                "resourceVersion": "15539",
+                "selfLink": "/apis/migrations.openshift.io/v1beta1/namespaces/mig/migrationclusters/my-old-cluster",
+                "uid": "27a6cace-45c7-11e9-9286-0e070849dc4e"
+            },
+            "spec": {
+                "clusterAuthSecretRef": {
+                    "name": "my-old-cluster-migrationcluster-auth",
+                    "namespace": "openshift-config"
+                },
+                "clusterUrl": "https://ocp3.example.com:8443"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}
