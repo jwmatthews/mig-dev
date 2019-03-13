@@ -1,0 +1,10 @@
+apiVersion: migrations.openshift.io/v1beta1
+kind: MigrationCutover
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: my-migrationcutover
+  namespace: mig
+spec:
+  migrationRef:
+    name: my-migration

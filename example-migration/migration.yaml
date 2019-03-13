@@ -1,0 +1,11 @@
+apiVersion: migrations.openshift.io/v1beta1
+kind: Migration
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: my-migration
+  namespace: mig
+spec:
+  migrationPlanRef:
+    name: my-migrationplan
+    # scheduledStart: (datetime)

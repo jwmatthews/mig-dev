@@ -1,0 +1,15 @@
+apiVersion: migrations.openshift.io/v1beta1
+kind: MigrationStorage
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: my-migrationstorage
+  namespace: mig
+spec:
+  backupStorageLocationRef:
+    name: my-backupstoragelocation
+  backupStorageLocationRef:
+    name: my-volumesnapshotlocation
+  migrationStorageSecretRef:
+    name: my-migrationstorage-auth
+    namespace: openshift-config

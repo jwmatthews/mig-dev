@@ -1,0 +1,16 @@
+apiVersion: migrations.openshift.io/v1beta1
+kind: MigrationPlan
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: my-migrationplan
+  namespace: mig
+spec:
+  srcClusterRef:
+    name: my-old-cluster
+  destClusterRef:
+    name: my-new-cluster
+  migrationStorageRef:
+    name: my-migrationstorage
+  migrationAssetCollectionRef:
+    name: my-migrationassetcollection

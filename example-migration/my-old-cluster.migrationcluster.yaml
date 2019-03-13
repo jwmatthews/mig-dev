@@ -1,0 +1,14 @@
+apiVersion: migrations.openshift.io/v1beta1
+kind: MigrationCluster
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: my-new-cluster
+  namespace: mig
+spec:
+  clusterUrl: https://ocp4.example.com:8443
+  clusterAuthSecretRef:
+    # Secret name format:
+    # <MigrationCluster name>-migrationcluster-auth
+    name: my-new-cluster-migrationcluster-auth
+    namespace: openshift-config

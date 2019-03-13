@@ -1,0 +1,15 @@
+apiVersion: migrations.openshift.io/v1beta1
+kind: MigrationAssetCollection
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: my-migrationassetcollection
+  namespace: mig
+spec:
+  namespaces:
+    - foo
+    - bar
+  # NOTE: Not sure if this will be on the final object
+  #images:
+    #- im1
+    #- im2
