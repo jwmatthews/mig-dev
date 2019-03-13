@@ -3,6 +3,7 @@ kind: MigrationAssetCollection
 metadata:
   labels:
     controller-tools.k8s.io: "1.0"
+    migrations.openshift.io/migration-group: example
   name: my-migrationassetcollection
   namespace: mig
 spec:
