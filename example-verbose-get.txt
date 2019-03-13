@@ -1,3 +1,4 @@
+# oc get migrationclusters -v=8 -o json
 I0313 15:46:02.192396   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
 I0313 15:46:02.193231   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
 I0313 15:46:02.196632   10546 loader.go:359] Config loaded from file /home/ernelson/.kube/config
