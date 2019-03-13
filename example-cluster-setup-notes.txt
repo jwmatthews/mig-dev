@@ -24,7 +24,7 @@ cd origin3-dev
 # Copy the sample config file "config.yml.example" over to a version that you will edit "config.yml"
 cp config.yml.example config.yml
 
-# Edit the config file, changing options as desired 
+# Edit the config file, changing options as desired
 # (the defaults in this file will deploy to AWS in us-east-1 with the libra SSH key)
 # (if you want to run locally instead of on AWS, change ec2_install from "true" to "false")
 vim config.yml
@@ -63,7 +63,7 @@ ansible-playbook terminate.yml
 Part 3: Installing CRDs onto a cluster
 -----------------------------------------------------
 
-After you've created a cluster, you can extend the cluster API by 
+After you've created a cluster, you can extend the cluster API by
 creating CRDs (custom resource definitions) on the cluster.
 
 The current CRDs for migration work are available here:
