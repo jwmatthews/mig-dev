@@ -1,0 +1,39 @@
+ocp4 cluster, use ocp4 alias to login: $ocp4address
+
+Deploy Velero:
+curl 'https://raw.githubusercontent.com/fusor/mig-controller/master/hack/deploy/deploy_velero.sh' | oc create -f-
+This will also set up a mig namespace and configure the sa
+
+Intall mig-controller deployment:
+oc apply -f https://raw.githubusercontent.com/fusor/mig-controller/master/config/releases/latest/manifest.yaml
+
+Create an AWS bucket with https://github.com/fusor/ocp-velero-ansible
+Spits out credentials to config file in config/
+Note the region (can be defined as a default in AWS env vars), bucket name,
+and keys that were generated
+
+This will get you an oa based 3.11 cluster
+https://github.com/fusor/mig-ci#ocp3-all-in-one-deployment-on-aws
+
+The workflow is now a bit different. You should follow these steps to deploy in a clean environment.
+1. Supply the `SUB_USER`, `SUB_PASS` and desired `WORKSPACE` in the env.
+2. Create a `$WORKSPACE/keys` directory and put there you `libra.pem` key.
+3. Execute the `ansible-playbook get_ocp3_oa.yml`. This will check out the OA playbooks for 3.11 version.
+4. Execute the `ansible-playbook deploy_ocp3_cluster.yml`
+
+!!Make sure to delete the gp2 storageclass so it's not dynamically provisioning
+PVs on AWS and forces it to use the NFS PVs!!
+
+Added scripts to help
+
+!!Make sure to oc login to ocp3 cluster at this point, so nfs gets provisioned
+in the correct place!!
+Then run the setup_nfs.sh script (deploys a separate NFS server, and provisions
+PVs to point at this NFS server)
+
+This should also work with origin3-dev, but oa is probably a better example.
+
+Run mysql-pvc.yml playbook here to get mysql with some data in it
+
+Commands to get into the mysql db
+https://github.com/fusor/mig-e2e/blob/6e4ed4580c62524afc8f6d84b869885fae510458/roles/pvc/mysql_pvc/tasks/main.yml#L11
