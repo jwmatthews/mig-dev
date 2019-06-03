@@ -9,7 +9,6 @@ fi
 MIG_CI=/git/mig/mig-ci
 export WORKSPACE=/git/mig/mig-ci-workspace
 export EC2_REGION="$AWS_DEFAULT_REGION"
-export EC2_KEY='libra'
 # Will default to 3.11, but can be set with this var
 #export OPENSHIFT_VERSION='v3.11'
 

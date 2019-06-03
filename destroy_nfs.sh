@@ -13,5 +13,6 @@ export EC2_REGION="$AWS_DEFAULT_REGION"
 #export OPENSHIFT_VERSION='v3.11'
 
 pushd $MIG_CI
-ansible-playbook destroy_ocp3_cluster.yml
+#ansible-playbook nfs_server_deploy.yml
+ansible-playbook nfs_server_destroy.yml
 popd

@@ -17,7 +17,7 @@ https://github.com/fusor/mig-ci#ocp3-all-in-one-deployment-on-aws
 
 The workflow is now a bit different. You should follow these steps to deploy in a clean environment.
 1. Supply the `SUB_USER`, `SUB_PASS` and desired `WORKSPACE` in the env.
-2. Create a `$WORKSPACE/keys` directory and put there you `libra.pem` key.
+2. Create a `$WORKSPACE/keys` directory and put there you pem key.
 3. Execute the `ansible-playbook get_ocp3_oa.yml`. This will check out the OA playbooks for 3.11 version.
 4. Execute the `ansible-playbook deploy_ocp3_cluster.yml`
 
