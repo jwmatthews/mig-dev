@@ -33,7 +33,8 @@ PVs to point at this NFS server)
 
 This should also work with origin3-dev, but oa is probably a better example.
 
-Run mysql-pvc.yml playbook here to get mysql with some data in it
+oc cp -n mysql-persistent data.sql PODNAME:/opt/app-root/src
+oc exec -n mysql-persistent PODNAME -- /bin/bash -c "mysql -uMYSQL_USER -pMYSQL_PASSWORD MYSQL_DATABASE < /opt/app-root/src/data.sql"
 
 Commands to get into the mysql db
 https://github.com/fusor/mig-e2e/blob/6e4ed4580c62524afc8f6d84b869885fae510458/roles/pvc/mysql_pvc/tasks/main.yml#L11
