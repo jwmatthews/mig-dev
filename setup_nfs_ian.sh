@@ -8,11 +8,11 @@ fi
 
 MIG_CI=/git/mig/mig-ci
 export WORKSPACE=/git/mig/mig-ci-workspace-ian
-export EC2_REGION="$AWS_DEFAULT_REGION"
+export EC2_REGION="us-east-1"
 # Will default to 3.11, but can be set with this var
 #export OPENSHIFT_VERSION='v3.11'
 
 pushd $MIG_CI
 #ansible-playbook nfs_server_deploy.yml
-ansible-playbook nfs_server_deploy.yml
+ansible-playbook nfs_provision_pvs.yml
 popd
