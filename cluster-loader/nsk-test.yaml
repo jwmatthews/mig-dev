@@ -1,0 +1,23 @@
+provider: local
+ClusterLoader:
+  cleanup: false
+  projects:
+    - num: 1000
+      basename: nsk-test
+      ifexists: reuse
+#provider: local
+#ClusterLoader:
+  #cleanup: true
+  #projects:
+    #- num: 100
+      #basename: nsk-test
+      #tuning: default
+      #ifexists: reuse
+  #tuningset:
+    #- name: default
+      #pods:
+        #stepping:
+          #stepsize: 5
+          #pause: 0 s
+        #rate_limit:
+          #delay: 0 ms
