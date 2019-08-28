@@ -2,9 +2,12 @@ provider: local
 ClusterLoader:
   cleanup: false
   projects:
-    - num: 1000
+    - num: 9
       basename: nsk-test
       ifexists: reuse
+      templates:
+        - num: 1
+          file: /tmp/cluster-loader/nginx-with-pv.yaml
 #provider: local
 #ClusterLoader:
   #cleanup: true

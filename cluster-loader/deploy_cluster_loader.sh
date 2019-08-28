@@ -1,5 +1,6 @@
 #!/bin/bash
 _dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+KUBECONFIG=${KUBECONFIG:-~/.kube/config}
 TESTS_IMG_TAG=latest
 #TESTS_IMG_TAG="4.1"
 

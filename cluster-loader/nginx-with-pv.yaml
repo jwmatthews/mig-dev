@@ -1,0 +1,68 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: nginx-with-pv-template
+objects:
+  - kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: nginx-logs
+      labels:
+        app: nginx
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 50Mi
+  - apiVersion: apps/v1beta1
+    kind: Deployment
+    metadata:
+      name: nginx-deployment
+    spec:
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          volumes:
+            - name: nginx-logs
+              persistentVolumeClaim:
+               claimName: nginx-logs
+          containers:
+          - image: docker.io/twalter/openshift-nginx
+            name: nginx
+            ports:
+            - containerPort: 8081
+            volumeMounts:
+              - mountPath: "/var/log/nginx"
+                name: nginx-logs
+                readOnly: false
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      labels:
+        app: nginx
+      name: my-nginx
+    spec:
+      ports:
+      - port: 8081
+        targetPort: 8081
+      selector:
+        app: nginx
+      type: LoadBalancer
+  - apiVersion: route.openshift.io/v1
+    kind: Route
+    metadata:
+      name: my-nginx
+      labels:
+        app: nginx
+        service: my-nginx
+    spec:
+      to:
+        kind: Service
+        name: my-nginx
+      port:
+        targetPort: 8081
+parameters: []
