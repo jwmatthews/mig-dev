@@ -1,0 +1,96 @@
+- apiVersion: migration.openshift.io/v1alpha1
+  kind: MigPlan
+  metadata:
+    name: t0
+    namespace: openshift-migration
+  spec:
+    destMigClusterRef:
+      name: host
+      namespace: openshift-migration
+    migStorageRef:
+      name: eriks-aws-storage
+      namespace: openshift-migration
+    namespaces:
+    - nsk-test0
+    persistentVolumes:
+    - capacity: 100Gi
+      name: pv8
+      pvc:
+        accessModes:
+        - ReadWriteOnce
+        name: nginx-logs
+        namespace: nsk-test0
+      selection:
+        action: copy
+        storageClass: gp2
+      supported:
+        actions:
+        - copy
+        - move
+    srcMigClusterRef:
+      name: origin3-dev
+      namespace: openshift-migration
+- apiVersion: migration.openshift.io/v1alpha1
+  kind: MigPlan
+  metadata:
+    name: t1
+    namespace: openshift-migration
+  spec:
+    destMigClusterRef:
+      name: host
+      namespace: openshift-migration
+    migStorageRef:
+      name: eriks-aws-storage
+      namespace: openshift-migration
+    namespaces:
+    - nsk-test1
+    persistentVolumes:
+    - capacity: 100Gi
+      name: pv2
+      pvc:
+        accessModes:
+        - ReadWriteOnce
+        name: nginx-logs
+        namespace: nsk-test1
+      selection:
+        action: copy
+        storageClass: gp2
+      supported:
+        actions:
+        - copy
+        - move
+    srcMigClusterRef:
+      name: origin3-dev
+      namespace: openshift-migration
+- apiVersion: migration.openshift.io/v1alpha1
+  kind: MigPlan
+  metadata:
+    name: t2
+    namespace: openshift-migration
+  spec:
+    destMigClusterRef:
+      name: host
+      namespace: openshift-migration
+    migStorageRef:
+      name: eriks-aws-storage
+      namespace: openshift-migration
+    namespaces:
+    - nsk-test2
+    persistentVolumes:
+    - capacity: 100Gi
+      name: pv3
+      pvc:
+        accessModes:
+        - ReadWriteOnce
+        name: nginx-logs
+        namespace: nsk-test2
+      selection:
+        action: copy
+        storageClass: gp2
+      supported:
+        actions:
+        - copy
+        - move
+    srcMigClusterRef:
+      name: origin3-dev
+      namespace: openshift-migration
