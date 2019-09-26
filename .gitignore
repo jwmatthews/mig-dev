@@ -1,3 +1,4 @@
 velero_aws_creds.yml
 clusters.txt
 my_var
+marketplace.secret.yml
